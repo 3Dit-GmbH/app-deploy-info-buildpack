@@ -2,5 +2,10 @@
 # bin/detect <build-dir>
 
 # this pack is valid for apps with a timestamp.json in src/public/
-echo "app-deploy-info"
-exit 0
+if [ -f $1/src/public/timestamp.json ]; then
+  echo "app-deploy-info"
+  exit 0
+else
+  echo "$1/src/public/timestamp.json not found"
+  exit 1
+fi

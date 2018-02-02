@@ -11,10 +11,8 @@ ENV_DIR=${3:-}
 file=timestamp.json
 path=$BUILD_DIR/src/public
 
-echo "Hello WOrld" > ~/.meteor/heroku_build/app/programs/web.browser/app/test2.txt
-echo $(date +%s) > ~/.meteor/heroku_build/app/programs/web.browser/app/test2.txt
-
 timestamp=$(date +%s)
 echo "timestamp is: $timestamp"
 cmd="\x7b\x22timestamp\x22:$timestamp\x7d"
 echo -e $cmd > $path/$file
+cat $path/$file
