@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+# this pack is valid for apps with a timestamp.json in src/public/
+if [ -f $1/src/public/timestamp.json ]; then
+  echo "app-deploy-info"
+  exit 0
+else
+  exit 1
+fi

@@ -1,0 +1,13 @@
+#!/bin/bash
+# bin/compile BUILD_DIR CACHE_DIR ENV_DIR
+
+
+# This script simply generates the build timestamp
+
+file=timestamp.json
+path=$1/src/public
+
+timestamp=$(date +%s)
+echo "timestamp is: $timestamp"
+cmd="\x7b\x22timestamp\x22:$timestamp\x7d"
+echo -e $cmd > $path/$file
